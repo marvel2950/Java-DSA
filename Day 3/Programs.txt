@@ -1,0 +1,87 @@
+// "static void main" must be defined in a public class.
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        
+        //Odd even program
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num%2==0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+        
+        //Loop 
+        for(int i=0;i<3;i++){
+            System.out.println(i);
+        }
+        for(int i=3;i>=0;i--){
+            System.out.println(i);
+        }
+        //print a->z
+        //ascii values
+        char ch = 'a';
+        int ascii = ch;
+        System.out.println(ascii);
+        
+        for(int a = 97; a<=122; a++){
+            System.out.println((char)a);
+        }
+        
+        //Count multiples of 3
+        int count = 0;
+        int n = sc.nextInt();
+        for(int i =1;i<=n;i++){
+            if(i%3==0)
+                count = count+1;
+                //count++;
+        }
+        System.out.println(count);
+        
+        //Prime number
+        int c = 0;
+        for(int i=1;i<=n;i++){
+            if(n%i==0)
+                c++;
+        }
+        if(c==2)
+            System.out.println("Prime");
+        else
+            System.out.println("Not prime");
+        
+        for(int i=2;i<=n-1;i++){
+            if(n%i==0)
+                c++;
+        }
+        if(c==0)
+            System.out.println("Prime");
+        else
+            System.out.println("Not prime");
+        
+        //Print all pairs from 1 to n.
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                System.out.println(i+" "+j);
+            }
+        }
+        
+        //Patterns
+        // ****
+        for(int i=0;i<4;i++){
+            System.out.print("* ");
+        }
+        
+        System.out.println();
+        System.out.println("##########");
+        
+        //***
+        //***
+        //***
+        for(int i=0;i<3;i++){
+           for(int j=0;j<3;j++){
+            System.out.print("* ");
+        }
+            System.out.println();
+        }
+    }
+}
