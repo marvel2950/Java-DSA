@@ -1,0 +1,89 @@
+public class Main {
+    //Functions
+    static int add(int a, int b){
+        return a+b;
+    }
+    
+    public static void main(String[] args) {
+        
+        //Function call
+        int a = 5;
+        int b = 7;
+        int sum = add(a,b);
+        System.out.println(sum);
+        
+        System.out.println("---------------");
+        
+        int n = 3;
+        
+        //Print patterns
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) {
+                System.out.print("* ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<i+1;j++) {
+                System.out.print("* ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n-i;j++) {
+                System.out.print("* ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<i+1;j++) {
+                System.out.print(j+1+" ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n-i-1;j++) {
+                System.out.print("  ");
+        }
+             for(int j=0;j<i+1;j++) {
+                System.out.print("* ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<i+1;j++) {
+                System.out.print((char)(j+97)+" ");
+        }
+            System.out.println();
+        }
+        
+        System.out.println("---------------");
+        
+        int alpha = 1;
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<i+1;j++) {
+                System.out.print(alpha+" ");
+                alpha++;
+        }
+            System.out.println();
+        }
+        
+        
+    }
+}
