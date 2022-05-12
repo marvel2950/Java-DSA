@@ -11,7 +11,7 @@
 a
 b a
 c b a
-d c b
+d c b a
 
 4. Try all programs with functions
 
