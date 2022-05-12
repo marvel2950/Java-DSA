@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        
+        //Inputs
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        String b = sc.next();
+        char e = sc.next().charAt(0);
+        float c = sc.nextFloat();
+        double d = sc.nextDouble();
+        System.out.println(a+" "+b+" "+c+" "+d+" "+e);
+        
+        //Print all pairs from 1 to n
+        for(int i=1;i<=a;i++){
+            for(int j=1;j<=a;j++){
+                System.out.println(i+j);
+            }
+        }
+        
+        //Print all even sum pairs from 1 to n
+        int count = 0;
+        for(int i=1;i<=a;i++){
+            for(int j=1;j<=a;j++){
+                if((i+j)%2==0){
+                    System.out.println(i+" "+j);
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
