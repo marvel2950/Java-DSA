@@ -1,0 +1,25 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+        int a = 6;        
+        if(a%3==0){
+            System.out.println("3");
+        }
+        else if(a%2==0){
+            System.out.println("2");
+        }
+        
+        if(a%3==0){
+            if(a%2==0){
+                System.out.println("both");
+            }
+            System.out.println("Yes");
+        }
+        
+        if(a%3==0 && a%2==0){
+            System.out.println("Multiple");
+        }
+        
+        
+    }
+}
