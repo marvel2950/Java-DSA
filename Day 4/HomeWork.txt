@@ -13,7 +13,7 @@ b a
 c b a
 d c b a
 
-4. Try all programs with functions
+4. Try all programs with functions/methods
 
 5. 
 
