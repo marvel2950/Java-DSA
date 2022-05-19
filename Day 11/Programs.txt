@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        //Integer Array
+        int[] arr = new int[3];
+        arr[0] = 5;
+        arr[1] = 7;
+        arr[2] = 9;
+        System.out.println(arr[0]);
+        
+        //Float elements
+        float[] arr1 = new float[9];
+        arr1[0] = 9.0f;
+        System.out.println(arr1[0]);
+        
+        //Printing Array Elements
+        int[] arr = new int[3];
+        arr[0] = 5;
+        arr[1] = 7;
+        arr[2] = 9;
+        System.out.println(arr[0]);
+        
+        
+    }
+}
