@@ -1,0 +1,75 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        //Integer Array
+        int[] arr = new int[3];
+        arr[0] = 5;
+        arr[1] = 7;
+        arr[2] = 9;
+        System.out.print(arr[0]);
+        
+        System.out.println("\n---------------");
+
+        //Initialisation
+        int[] arr1 = {1,2,3,8,9};
+        
+        //Printing
+        System.out.print(arr1[0]+" ");
+        System.out.print(arr1[1]+" ");
+        System.out.print(arr1[2]+" ");
+        System.out.print(arr1[3]+" ");
+        System.out.print(arr1[4]+" ");
+        
+        System.out.println("\n---------------");
+        
+        int n1 = arr1.length;
+        for(int i=0;i<n1;i++){
+            System.out.print(arr1[i]+" ");
+        }
+        
+        System.out.println("\n---------------");
+
+        //Input in an array
+        Scanner sc = new Scanner(System.in);
+        int[] arr2 = new int[3];
+        arr2[0] = sc.nextInt();
+        arr2[1] = sc.nextInt();
+        arr2[2] = sc.nextInt();
+        
+        int n2 = arr2.length;
+        for(int i=0;i<n2;i++){
+            System.out.print(arr2[i]+" ");
+        }
+        
+        System.out.println("\n---------------");
+
+        
+        int[] arr3 = new int[3];
+        int n3 = arr3.length;
+        for(int i=0;i<n3;i++){
+            arr3[i] = sc.nextInt();
+        }
+        
+        for(int i=0;i<n3;i++){
+            System.out.print(arr3[i]+" ");
+        }
+        
+        System.out.println("\n---------------");
+
+        //Array length -> dynamic
+        int n4 = sc.nextInt();
+        int[] arr4 = new int[n4];
+        
+        for(int i=0;i<n4;i++){
+            arr4[i] = sc.nextInt();
+        }
+        
+        for(int i=0;i<n4;i++){
+            System.out.print(arr4[i]+" ");
+        }
+        
+        System.out.println("\n---------------");
+
+       
+    }
+}
