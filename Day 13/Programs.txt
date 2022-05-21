@@ -1,0 +1,99 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //Print alternate elements
+        int arr[] = {1,6,8,9,5,3,7};
+        int n = arr.length;
+        
+        for(int i=0;i<n;i++){
+            if(i%2==0)
+                System.out.print(arr[i]+" ");
+        }
+        
+        System.out.println("\n-------------");
+        
+        for(int i=0;i<n;i++){
+            if(i%2==1)
+                System.out.print(arr[i]+" ");
+        }
+        
+        System.out.println("\n-------------");
+        
+        for(int i=0;i<n;i=i+2){
+                System.out.print(arr[i]+" ");
+        }
+            
+        System.out.println("\n-------------");
+        
+        for(int i=1;i<n;i=i+2){
+                System.out.print(arr[i]+" ");
+        }
+        
+        System.out.println("\n-------------");
+
+        //Print alternate elements in reverse order
+        for(int i=n-1;i>=0;i=i-2){
+                System.out.print(arr[i]+" ");
+        }
+            
+        System.out.println("\n-------------");
+        
+        for(int i=n-2;i>=1;i=i-2){
+                System.out.print(arr[i]+" ");
+        }
+        
+        System.out.println("\n-------------");
+        
+        //Sum of all elements
+        int sum = 0;
+        for(int i=0;i<n;i++){
+           sum= sum+arr[i];
+        }
+        System.out.print(sum);
+        
+        System.out.println("\n-------------");
+        
+        //Product of all elements
+        int prod = 1;
+        for(int i=0;i<n;i++){
+            prod = prod*arr[i];
+        }
+        System.out.print(prod);
+        
+        System.out.println("\n-------------");
+        
+        //Count evens in an array
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(arr[i]%2==0)
+                count++;
+        }
+        System.out.print(count);
+        
+        System.out.println("\n-------------");
+        
+        //Sum of even and odds in an array
+        int even = 0;
+        int odd = 0;
+        for(int i=0;i<n;i++){
+            if(arr[i]%2==0)
+                even += arr[i]; //even = even+arr[i];
+            else
+                odd += arr[i];
+        }
+        System.out.print("Even sum is "+even+" and odd sum is "+odd);
+        
+        System.out.println("\n-------------");
+        
+        //Sum of elements with index = value
+        int indSum = 0;
+        for(int i=0;i<n;i++){
+            if(i==arr[i])
+                indSum += arr[i];
+        }
+        System.out.print(indSum);
+        
+        
+        
+    }
+}

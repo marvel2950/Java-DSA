@@ -1,0 +1,1 @@
+Solve all today's problem using while loop.
