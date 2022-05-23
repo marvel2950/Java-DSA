@@ -1,0 +1,1 @@
+-Find smallest number in an array.

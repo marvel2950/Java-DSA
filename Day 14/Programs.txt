@@ -1,0 +1,74 @@
+public class Main {
+    static int linearSearch(int[] arr, int ele){
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==ele)
+                return i;
+        }
+        return -1;
+    }
+    
+    static int greatest(int a, int b){
+        if(a>b)
+            return a;
+        else
+            return b;
+    }
+    
+    static int greatestArray(int[] arr){
+        int max = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max)
+                max = arr[i];
+        }
+        return max;
+    }
+    
+    static int[] reverse(int[] arr){
+        int n = arr.length-1;
+        int[] reversedArr = new int[n+1];
+        for(int i=0;i<arr.length;i++){
+            int j = n-i;
+            reversedArr[i] = arr[j];
+            //System.out.println(i+" "+j);
+        }
+        return reversedArr;
+    }
+    
+    public static void main(String[] args) {
+        
+        //Linear Search
+        int[] arr = {5,1,2,3,8,4};
+        int ele = 2;
+        //System.out.println(search(arr,ele));
+        int ind = linearSearch(arr,ele);
+        System.out.println(ind);
+        
+        System.out.println("------------");
+
+        //Greatest among two numbers
+        int a = 7;
+        int b = 6;
+        int c = greatest(a,b);
+        System.out.println(c);
+        
+        System.out.println("------------");
+        
+        //Largest in array
+        int max = greatestArray(arr);
+        System.out.println(max);
+        
+        System.out.println("------------");
+        
+        //Reverse an array
+        int[] revArr = reverse(arr);
+        for(int i=0;i<revArr.length;i++){
+            System.out.print(revArr[i]+" ");
+        }
+        
+        
+        
+        
+        
+        
+    }
+}
