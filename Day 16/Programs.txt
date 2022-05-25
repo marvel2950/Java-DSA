@@ -1,0 +1,128 @@
+public class Main {
+    
+    static void insertionSort(int[] arr){
+        for(int i = 0;i<arr.length;i++){
+            int j = i-1;
+            while(j>=0 && arr[j]>arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                j--;;
+            }
+        }
+    }
+    
+    static boolean checkPrime(int n){
+        int count = 0;
+        for(int i=1;i<=n;i++){
+            if(n%i==0)
+                count++;
+        }
+        if(count==2)
+            return true;
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        //Push element in a sorted array at its sorted position
+        int [] arr = {1,3,5,6,7,4};
+        int j = arr.length - 2;
+        while(j>=0 && arr[j]>arr[j+1]){
+            int temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+            j--;;
+        }
+        
+        //Printing an array using while
+        int i=0;
+        while(i<arr.length){
+            System.out.print(arr[i]+" ");
+            i++;
+        }
+        System.out.println("\n-----------");
+        
+        //Insertion Sort
+        int[] array = {5,4,3,2,1};
+        insertionSort(array);
+        
+        i=0;
+        while(i<array.length){
+            System.out.print(array[i]+" ");
+            i++;
+        }
+        
+        System.out.println("\n-----------");
+        
+        //Fibonacci series -> nth term
+        int n = 5;
+        int a = 0;
+        int b = 1;
+        if(n==1)
+            System.out.println(a);
+        else if(n==2)
+            System.out.println(b);
+        else{
+            int c = 0;
+            for(i=0;i<n-2;i++){
+                c = a+b;
+                a = b;
+                b = c;
+            }
+            System.out.print(c);
+        }
+
+        System.out.println("\n-----------");
+        
+        //Fibonacci array
+        n = 10;
+        int[] fib = new int[n];
+        a = 0;
+        b = 1;
+        fib[0] = a;
+        fib[1] = b;
+        int c = 0;
+        for(i=0;i<n-2;i++){
+            c = a+b;
+            a = b;
+            b = c;
+            fib[i+2] = c;
+        }
+        
+        
+        i=0;
+        while(i<fib.length){
+            System.out.print(fib[i]+" ");
+            i++;
+        }
+        
+        System.out.println("\n-----------");
+        
+        //Count of primes in an array
+        int count = 0;
+        for(i=0;i<arr.length;i++){
+            if(checkPrime(arr[i])==true)
+                count++;
+        }
+        System.out.print(count);
+        
+        System.out.println("\n-----------");
+
+        //Factorial array
+        n = 7;
+        int f = 1;
+        int[] fact = new int[n+1];
+        fact[0] = 1;
+        for(i=1;i<=n;i++){
+            f = f*i;
+            fact[i] = f;
+        }
+        
+        i=0;
+        while(i<fact.length){
+            System.out.print(fact[i]+" ");
+            i++;
+        }
+        
+    }
+}
