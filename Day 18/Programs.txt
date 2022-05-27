@@ -1,0 +1,71 @@
+public class Main {
+    static void firstAndLastOccurenceOfAnElement1(int[] arr,int ele){
+        int n = arr.length;
+        int first = -1;
+        int last = -1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i] == ele){
+                first = i;
+                break;
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i] == ele){
+                last = i;
+                System.out.println(last);
+            }
+        }
+        System.out.println(first+"->"+last);
+    }
+    
+    static void firstAndLastOccurenceOfAnElement2(int[] arr,int ele){
+        int n = arr.length;
+        int first = -1;
+        int last = -1;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i] == ele){
+                if(first==-1)
+                    first = i;
+                last = i;
+            }
+        }
+        System.out.println(first+"->"+last);
+    }
+    
+    static int diffMinMax(int[] arr){
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max)
+                max = arr[i];
+             if(arr[i]<min)
+                min = arr[i];
+        }
+        int diff = max-min;
+        return diff;
+    }
+    
+    static void findPeak(int[] arr){
+        int n = arr.length;
+        if(n==1)
+            System.out.print(arr[0]+" ");
+        else if(arr[0]>=arr[1])
+            System.out.print(arr[0]+" ");
+        if(n>2 && arr[n-1]>=arr[n-2])
+            System.out.print(arr[n-1]+" ");
+        for(int i=1;i<n-1;i++){
+            if(arr[i]>=arr[i+1] && arr[i]>=arr[i-1])
+                System.out.print(arr[i]+" ");
+        }            
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,3,4,5,3,6,7};
+        int ele = 3;
+        firstAndLastOccurenceOfAnElement1(arr,ele);
+        firstAndLastOccurenceOfAnElement2(arr,ele);
+        //System.out.println(diffMinMax(arr));
+        //findPeak(arr);
+    }
+}
