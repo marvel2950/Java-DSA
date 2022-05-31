@@ -1,0 +1,133 @@
+public class Main {
+    public static void main(String[] args) {
+        //Pairise Swap
+//         int[] arr = {1,2,3,4,5};
+//         int n = arr.length;
+        
+//         for(int i=0;i<n;i=i+2){
+//             //swap arr[i] and arr[i+1]
+//             if(i+1<n){
+//                 int temp = arr[i];
+//                 arr[i] = arr[i+1];
+//                 arr[i+1] = temp;
+//             }
+//          }
+        
+//         //Printing array
+//         for(int i=0;i<n;i++)
+//             System.out.print(arr[i]+" ");
+        
+//         System.out.println("\n---------------------------");
+        
+        //Sort array of 0's and 1's
+        //Counting solution
+//         int[] array = {0,1,1,1,0,0,1,0};
+//         n = array.length;
+//         int count = 0;
+//         for(int i=0;i<n;i++){
+//             if(array[i]==0)
+//                 count++;
+//         }
+//         for(int i=0;i<count;i++)
+//             array[i] = 0;
+//         for(int i=count;i<n;i++)
+//             array[i] = 1;
+        
+//         //Printing array
+//         for(int i=0;i<n;i++)
+//             System.out.print(array[i]+" ");
+        
+//         System.out.println("\n---------------------------");
+        
+        //Two pointer approach
+//         int[] arr1 = {0,1,1,1,0,0,1,0};
+//         n = arr1.length;
+//         int i = 0;
+//         int j = n-1;
+        
+//         while(i<j){
+//             if(arr1[i]==1){
+//                 int temp = arr1[i];
+//                 arr1[i] = arr1[j];
+//                 arr1[j] = temp;
+//                 j--;
+//             }
+//             else
+//                 i++;
+//         }
+        
+        //Printing array
+//         for(i=0;i<n;i++)
+//             System.out.print(arr1[i]+" ");
+        
+//         System.out.println("\n---------------------------");
+        
+        //Sort array of 0's, 1's and 2's
+        //Counting solution
+//         int[] arr2 = {0,1,2,1,1,2,0,2,0,1,0};
+//         int  n = arr2.length;
+//         int count0 = 0;
+//         int count1 = 0;
+//         for(int i=0;i<n;i++){
+//             if(arr2[i]==0)
+//                 count0++;
+//             else if(arr2[i]==1)
+//                 count1++;
+//         }
+//         //System.out.println(count0+" "+count1);
+//         for(int i=0;i<count0;i++)
+//             arr2[i] = 0;
+//         for(int i=count0;i<count1+count0;i++)
+//             arr2[i] = 1;
+//          for(int i=count1+count0;i<n;i++)
+//             arr2[i] = 2;
+        
+//         //Printing array
+//         for(int i=0;i<n;i++)
+//             System.out.print(arr2[i]+" ");
+        
+//         System.out.println("\n---------------------------");
+        
+        //Three pointer approach
+        int[] arr1 = {0,1,2,1,1,2,0,2,0,1,0};
+        int n = arr1.length;
+        int i = 0;
+        int j = 0;
+        int k = n-1;
+        
+        while(j<=k){
+            if(arr1[j]==0){
+                int temp = arr1[i];
+                arr1[i] = arr1[j];
+                arr1[j] = temp;
+                j++;
+                i++;
+            }
+            else if(arr1[j]==1){
+                j++;
+            }
+            else{
+                int temp = arr1[k];
+                arr1[k] = arr1[j];
+                arr1[j] = temp;
+                k--;
+            }
+        }
+        
+        //Printing array
+        for(i=0;i<n;i++)
+            System.out.print(arr1[i]+" ");
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+            
+    }
+}
