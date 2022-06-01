@@ -1,1 +1,7 @@
-- Sort by parity (Evens first then odds)
+Sort by parity (Odds first then evens)
+
+INPUT :- arr :-> 1 2 4 3 6 7 8 9
+OUTPUT :- arr :-> 1 3 7 9 2 4 6 8
+
+
+
