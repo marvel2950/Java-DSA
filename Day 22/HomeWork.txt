@@ -1,0 +1,5 @@
+- Count number of pairs with sum exactly equal to k.(2 sum)
+       - Two pointer approach (O(n))
+
+- Count number of triplets with sum exactly equal to k.(3 sum)
+       - Brute force using nested for loop
