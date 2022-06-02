@@ -1,0 +1,117 @@
+public class Main {
+    
+    static void printArray(int[] arr){
+        int n = arr.length;
+        int i = 0;
+        while(i<n){
+            System.out.print(arr[i]+" ");
+            i++;
+        }
+    }
+    
+    static void twoSum(int[] arr, int sum){
+        int i = 0;
+        int j = arr.length-1;
+        while(i<j){
+            if(arr[i]+arr[j]==sum){
+                System.out.println(arr[i]+" "+arr[j]);
+                i++;
+                j--;
+            }
+            else if(arr[i]+arr[j]>sum)
+                j--;
+            else
+                i++;
+        }   
+        
+    }
+        
+        static void rotate(int[] arr){
+            int n = arr.length;
+            int x = arr[n-1];
+            for(int i=n-1;i>0;i--)
+                arr[i]= arr[i-1];
+            arr[0] = x;
+        }
+
+    static void reverse(int[] arr,int i,int j){
+        // int i = 0;
+        // int j = arr.length-1;
+        while(i<=j){
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+            // System.out.println(i+" "+j);
+            i++;
+            j--;
+        }
+    }
+    
+    static void merge(int[] arr,int i, int n, int j, int m){
+        int k = 0;
+        int[] arr3 = new int[n+m]; 
+        while(i<n && j<n+m){
+            if(arr[i]<arr[j]){
+                arr3[k] = arr[i];
+                k++;
+                i++;
+            }
+            else{
+                arr3[k] = arr[j];
+                k++;
+                j++;
+            }
+        }
+        while(i<n){
+            arr3[k] = arr[i];
+            k++;
+            i++;
+        }
+        while(j<m){
+            arr3[k] = arr[j];
+            k++;
+            j++;
+        }
+        
+        printArray(arr3);
+    }
+    
+    static void sortSquares(int[] arr){
+        //Split the array
+        // arr1 -> index:-i, length:-n
+        // arr2 -> index:-j, length:-m
+        int k;
+        for(k=0;k<arr.length;k++){
+            if(arr[k]>=0)
+                break;
+        }
+        int i = 0;
+        int n = k;
+        int j = k;
+        int m = arr.length-n;
+        
+        //Sqaured the elements
+        for(k=0;k<arr.length;k++)
+            arr[k] = arr[k]*arr[k];
+        
+        //Reverse the 1st array
+        reverse(arr,i,n-1);
+        
+        //Merge 2 sorted arrays 
+        merge(arr,i,n,j,m);  
+    }
+    
+    public static void main(String[] args) {
+        //Two sum problem (two pointer approach)
+        int[] array = {1,2,3,4,5,6,7};
+        int sum = 11;
+        //twoSum(array,sum);
+        
+        //Rotate array by 1
+        rotate(array);
+        //printArray(array);
+        
+        int[] arr = {-6,-3,-1,2,4,5};
+        sortSquares(arr);
+    }
+}
