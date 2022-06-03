@@ -1,0 +1,91 @@
+public class Main {
+    
+    static void printArray(int[] arr){
+        int n = arr.length;
+        int i = 0;
+        while(i<n){
+            System.out.print(arr[i]+" ");
+            i++;
+        }
+        System.out.println("\n------------");
+    }
+    
+    static int[] prefixSum(int[] arr){
+        int n = arr.length;
+        int[] pf = new int[n+1];
+        int sum = 0;
+        pf[0] = 0;
+        for(int i=1;i<n+1;i++){
+            sum = sum+arr[i-1];
+            pf[i] = sum;
+        }
+        return pf;
+    }
+    
+    static void rangeSum(){
+        
+        //Input
+//         int n = sc.nextInt();
+//         int[] arr = new int[n];
+//         for(int i=0;i<n;i++)
+//             arr[i] = sc.nextInt();
+        
+//         int queries = sc.nextInt();
+//         for(int i=0;i<queries;i++){
+//             int left = sc.nextInt();
+//             int right = sc.nextInt();
+//             //Code 
+//         }
+        
+        //Mock values
+        int[] arr = {1,2,3,4,5,6};
+        int n = arr.length;
+        int queries = 1;
+        int left = 1;
+        int right = 4;
+        
+        //Brute force approach
+        for(int i=0;i<queries;i++){
+            int sum = 0;
+            for(int j = left-1;j<right;j++)
+                sum = sum+arr[j];
+            System.out.println(sum);
+        }
+        
+        //Prefix sum approach
+        int[] prefix = prefixSum(arr);
+        for(int i=0;i<queries;i++){
+            int sum = prefix[right] - prefix[left-1];
+            System.out.println(sum);
+        }
+    }
+    
+    static int equilbrium(int[] arr){
+        int n = arr.length;
+        int sum = 0;
+        int leftSum = 0;
+        int rightSum = 0;
+        for(int i=0;i<n;i++)
+            sum = sum+arr[i];
+        
+        for(int i=0;i<n;i++){
+            leftSum = leftSum + arr[i];
+            rightSum = sum - leftSum;
+            if(leftSum == rightSum)
+                return i;
+        }
+        return -1;
+    }
+    
+    
+    public static void main(String[] args) {
+        int[] array = {1,2,3,4,5,6};
+        int[] pf = prefixSum(array);
+        printArray(pf);
+        
+        rangeSum();
+        
+        int[] arr = {-7,1,5,-2,4,-3,0};
+        System.out.println(equilbrium(arr));
+    }
+}
