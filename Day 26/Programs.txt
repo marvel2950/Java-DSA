@@ -1,0 +1,133 @@
+import java.util.*;
+public class Main {
+    
+    static int[] search2dArray(int[][] arr, int ele){
+        int n = arr.length;
+        int m = arr[0].length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(arr[i][j] == ele){
+                    int[] ind = {i,j};
+                    return ind;
+                }
+            }
+        }
+        int[] ind = {-1,-1};
+        return ind;
+    }
+    
+    static boolean areSame(int[][] arr, int[][] brr){
+        if(arr.length != brr.length || arr[0].length != brr[0].length)
+            return false;
+        int n = arr.length;
+        int m = arr[0].length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(arr[i][j] != brr[i][j])
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    static boolean isRowSumSame(int[][] arr){
+        
+        int prevSum =  0;
+        for(int j=0;j<3;j++){
+                prevSum = prevSum + arr[0][j];
+        }
+        
+        for(int i=1;i<3;i++){
+            int curSum = 0;
+            for(int j=0;j<3;j++){
+                curSum = curSum + arr[i][j];
+            }
+            
+            if(curSum != prevSum)
+                return false;
+            prevSum = curSum;
+        }
+        
+        return true;
+        
+    }
+    
+    public static void main(String[] args) {
+        
+        //Syntax 1
+        int[][] a = {
+                        {1,2,3},
+                        {4,5,6},
+                        {7,8,9}
+                      };
+        
+        //Print 2D array
+        int n = a.length;
+        int m = a[0].length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        //Syntax 2 (rows X cols)
+        int[][] arr = new int[3][3];
+        
+        //Input in array
+        Scanner sc = new Scanner(System.in);
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                arr[i][j] = sc.nextInt();
+        
+        //Print 2D array
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        //Sum of 2D array
+        int sum = 0;
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
+                sum = sum + arr[i][j];
+        System.out.println(sum);
+        
+        //Print 2D array in reverse
+        for(int i=n-1;i>=0;i--){
+            for(int j=m-1;j>=0;j--){
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+        //Search an element in 2D array (Linear Search)
+        int ele = 6;
+        int[] index = search2dArray(arr,ele);
+        System.out.println(index[0]+" "+index[1]);
+        
+        //Check if matrices are same
+        int[][] b = {
+                        {1,2,3},
+                        {4,5,6},
+                        {7,8,9}
+                      };
+        
+        System.out.println(areSame(a,b));
+        
+        //Check if sum of each row is same
+        int[][] c = {
+                {1,2,3},
+                {2,2,2},
+                {3,1,2}
+              };
+        
+        System.out.println(isRowSumSame(c));
+
+        
+
+        
+    }
+}

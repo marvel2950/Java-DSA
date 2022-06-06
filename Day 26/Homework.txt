@@ -1,0 +1,1 @@
+- WAP to check if sum of each column is same
