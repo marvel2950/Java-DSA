@@ -1,0 +1,192 @@
+public class Main {
+    
+    static void print2DArray(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    static int[][] sum2DArrays(int[][] arr, int[][] brr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        int[][] crr = new int[n][m];
+        
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++)
+                crr[i][j] = arr[i][j] + brr[i][j];
+        
+        return crr;
+    }
+    
+    static void print2DArrayWave(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            //even row
+            if(i%2==0){
+                for(int j=0;j<m;j++){
+                    System.out.print(arr[i][j]+" ");
+                }
+            }
+            //odd row
+            else{
+                //reverse printing
+                for(int j=m-1;j>=0;j--){
+                    System.out.print(arr[i][j]+" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    
+    static void printSumOfIndicies(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(i+j+" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    static void printDifferenceOfIndicies(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(i-j+" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    static void printDiagonal1(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(i==j)
+                    System.out.print(arr[i][j]+" ");
+            }
+        }
+        System.out.println();
+    }
+    
+    static void printDiagonal1Optimized(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++)
+            System.out.print(arr[i][i]+" ");
+         
+        System.out.println();
+    }
+    
+    static void printDiagonal2(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(i+j==n-1)
+                    System.out.print(arr[i][j]+" ");
+            }
+        }
+        System.out.println();
+    }
+    
+    static void printDiagonal2Optimized(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        //int j = n-1;
+        // for(int i=0;i<n;i++)
+        //     System.out.print(arr[i][j--]+" ");
+        
+        // for(int j=n-1;j>=0;j--)
+        //     System.out.print(arr[n-j-1][j]+" ");
+        
+        for(int i=0;i<n;i++)
+            System.out.print(arr[i][n-i-1]+" ");
+    
+        System.out.println();
+    }
+    
+    
+    public static void main(String[] args) {
+        int[][] arr = {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+        
+        int[][] brr = {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+        
+        //Sum of two 2D arrays
+        int[][] sumArray = sum2DArrays(arr,brr);
+        print2DArray(sumArray);
+        
+        System.out.println("---------");
+        
+        //Print wave of 2D array
+        print2DArrayWave(arr);
+        
+        System.out.println("---------");
+        
+        //Print sum of indicies of 2D array
+        printSumOfIndicies(arr);
+        
+        System.out.println("--------");
+        
+        //Print difference of indicies of 2D array
+        printDifferenceOfIndicies(arr);
+        
+        System.out.println("--------");
+        
+        //Print diagonal1 of matrix
+        printDiagonal1(arr);
+        
+        System.out.println("--------");
+        
+        //Print diagonal1 of matrix optimized
+        printDiagonal1Optimized(arr);
+        
+        System.out.println("---------");
+        
+        //Print diagonal2 of matrix
+        printDiagonal2(arr);
+        
+        System.out.println("--------");
+        
+        //Print diagonal2 of matrix optimized
+        printDiagonal2Optimized(arr);
+        
+        System.out.println("---------"); 
+        
+    }
+}
