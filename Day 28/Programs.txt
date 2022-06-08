@@ -1,0 +1,131 @@
+class Main {
+    
+    static void print2DArray(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    static boolean isIdentityMatrix(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(i==j){
+                    if(arr[i][j]!=1)
+                        return false;
+                }
+                else{
+                    if(arr[i][j]!=0)
+                        return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    static boolean isDiagonalSumEqual(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        int dia1 = 0;
+        int dia2 = 0;
+        
+        for(int j=0;j<n;j++)
+            dia1 += arr[j][j];
+        
+        for(int j=0;j<n;j++)
+             dia1 += arr[j][n-j-1];
+             
+        return dia1==dia2;
+    }
+    
+    static int[][] transpose(int[][] arr){
+        
+        int n = arr.length;
+        int m = arr[0].length;
+        
+        int[][] trans = new int[n][m];
+        
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++)
+                trans[i][j] = arr[j][i];
+                
+        return trans;
+        
+    }
+    
+    static boolean areSame(int[][] arr, int[][] brr){
+        if(arr.length != brr.length || arr[0].length != brr[0].length)
+            return false;
+        int n = arr.length;
+        int m = arr[0].length;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(arr[i][j] != brr[i][j])
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    static boolean isSymmetricMatrix(int[][] arr){
+        
+        int[][] trans = transpose(arr);
+        return areSame(arr,trans);
+    }
+    
+    public static void main(String[] args) {
+        
+        int[][] arr = {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+        
+        int[][] brr = {
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+        
+        //Check if matrix is identity matrix
+        int[][] crr = {
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        };
+        
+        System.out.println(isIdentityMatrix(crr));
+        
+        System.out.println("------");
+        
+        //Check if Diagonal Sum is equal
+        System.out.println(isDiagonalSumEqual(crr));
+        
+        System.out.println("------");
+        
+        //Transpose of matrix
+        int[][] trans = transpose(arr);
+        print2DArray(trans);
+        
+        System.out.println("------");
+        
+        //Check if Matrices are symmetric
+        System.out.println(isSymmetricMatrix(arr));
+        
+        
+        
+    }
+}
+
