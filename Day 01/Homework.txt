@@ -1,0 +1,6 @@
+1. Install Visual studio code and JAVA. https://www.youtube.com/watch?v=KwnavHTOBiA
+2. Read about JAVA and it’s applications.
+3. Try codes done in class on your own IDE.
+4. Try to think of some data and identify which data type will you use to store it. Ex: Percentage:  Float,  Speed: Integer etc.
+5.  WAP to input two integers and print sum.
+6.  WAP find area of rectangle.
