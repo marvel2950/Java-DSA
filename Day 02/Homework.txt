@@ -1,5 +1,0 @@
-1. Revise all programs.
-2. Make an account on Hackerrank
-3. Go through this video  https://www.youtube.com/watch?v=iyn6ZQ2qtvs&t=273s for Hackerrank
-4. WAP to input hour(24 hour format) and print good morning(<12) / good afternoon(<=16) / good evening(<=20) / good night.
-5.  Make a full report card program.
