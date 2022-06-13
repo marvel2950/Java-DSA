@@ -1,0 +1,8 @@
+https://www.geeksforgeeks.org/convert-character-array-to-string-in-java/
+
+https://docs.google.com/document/d/10bpGQOpJ0f72KUP1TfvcTxOkiS0aY6aDiXCm1cPhlBU/edit
+
+- WAP to sort a string
+	- Any of previously discussed sorting algo
+
+- In the previous question(Ideal string formation), what if a string has multiple words separated by spaces. Convert all words into ideal strings.
