@@ -1,0 +1,83 @@
+public class Main {
+    
+    static void bubbleSort(char[] arr){
+        for(int j=0;j<arr.length-1;j++){
+            for(int i=0;i<arr.length-1-j;i++){
+                if(arr[i]>arr[i+1]){
+                    char temp = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+
+    static String sortString(String str){
+        char[] arr = str.toCharArray();
+        bubbleSort(arr);
+        return new String(arr);
+    }
+    
+    static String makeIdealString(String name){
+        int n = name.length();
+        String newName = "";
+        for(int i=0;i<n;i++){
+            if(i==0)
+                newName = newName + Character.toUpperCase(name.charAt(i));
+            else
+                newName = newName + Character.toLowerCase(name.charAt(i));
+
+        }
+        return newName;
+    }
+
+    
+    static String makeIdealSent(String sent){
+        String[] sentWords = sent.split(" ");
+        String idealSent = "";
+        for(int i = 0;i<sentWords.length;i++){
+            idealSent = idealSent + makeIdealString(sentWords[i]) + " ";
+        }
+        return idealSent;
+        
+    }
+    
+    static String reverseSent(String sent){
+        String[] sentWords = sent.split(" ");
+        String idealSent = "";
+        for(int i = 0;i<sentWords.length;i++){
+            String revWord = "";
+            String curWord = sentWords[i];
+            for(int j=curWord.length()-1;j>=0;j--)
+                revWord = revWord + curWord.charAt(j);
+            idealSent = idealSent + revWord + " ";
+        }
+        return idealSent;
+        
+    }
+    
+    public static void main(String[] args) {
+        
+        //Sort a string (Bubble Sort)bbbbbb
+        String name = "Akarsh";
+        System.out.println(sortString(name));
+        
+        //Split method
+        String sent = "I love Akarsh";
+        String[] sentWords = sent.split(" ");
+        for(int i = 0;i<sentWords.length;i++)
+            System.out.println(sentWords[i]);
+        
+        //Convert it into ideal sentence
+        String idealSent = makeIdealSent(sent);
+        System.out.println(idealSent);
+        
+        //Reverse all words in space seperated strings
+        String revSent = reverseSent(sent);
+        System.out.println(revSent);
+
+        
+        
+        
+    }
+}
