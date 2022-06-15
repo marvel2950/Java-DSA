@@ -1,0 +1,85 @@
+public class Main {
+    
+    static boolean isPalString(String str){
+        
+        int i = 0;
+        int j = str.length()-1;
+        
+        while(i<j){
+            if(str.charAt(i) != str.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+        
+    }
+    
+    static int asciiString(String str){
+        
+        int i = 0;
+        int j = str.length();
+        int sum = 0;
+        
+        while(i<j){
+            sum += str.charAt(i);
+            i++;
+        }
+        return sum;
+        
+    }
+    
+    static boolean isEqualSumStrings(String str1, String str2){
+        
+        return asciiString(str1) == asciiString(str2);
+    }
+    
+    static boolean isAnagram(String str1, String str2){
+        str1 = str1.toLowerCase();
+        int[] arr1 = new int[26];
+        for(int i=0;i<str1.length();i++){
+            int ind = str1.charAt(i)-97;
+            arr1[ind] += 1;
+        }
+        
+        str2 = str2.toLowerCase();
+        int[] arr2 = new int[26];
+        for(int i=0;i<str2.length();i++){
+            int ind = str2.charAt(i)-97;
+            arr2[ind] += 1;
+        }
+        
+        for(int i=0;i<26;i++){
+            if(arr1[i] != arr2[i])
+                return false;
+        }
+            
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        
+        //Check if string is palindrome
+        String str = "palal";
+        System.out.println(isPalString(str));
+        
+        //Convert string into integer equivalent
+        System.out.println(asciiString(str));
+        
+        //Is two strings have equal sum ?
+        String str1 = "Aishwarya";
+        String str2 = "Akarsh";
+        System.out.println(isEqualSumStrings(str1,str2));
+        
+        //Check if two strings are anagram
+        String s1 = "akarsh";
+        String s2 = "hsaakr";
+        System.out.println(isAnagram(s1,s2));
+
+        
+        
+
+        
+        
+    }
+}
