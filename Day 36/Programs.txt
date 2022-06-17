@@ -1,0 +1,49 @@
+public class Main {
+    
+    static char firstNonRepeating(String str){
+        int n = str.length();
+        str = str.toLowerCase();
+        int[] count = new int[26];
+        for(int i=0;i<n;i++){
+            int ind = str.charAt(i)-97;
+            count[ind] += 1;
+        }
+        
+        for(int i=0;i<n;i++){
+            int ind = str.charAt(i)-97;
+            if(count[ind]==1)
+                return str.charAt(i);
+        }
+        
+        return '-';  
+    }
+    
+    static String removeDuplicatesSorted(String str){
+        int n = str.length();
+        str = str.toLowerCase();
+        int[] count = new int[26];
+        for(int i=0;i<n;i++){
+            int ind = str.charAt(i)-97;
+            count[ind] += 1;
+        }
+        String op = "";
+        for(int i=0;i<26;i++){
+            if(count[i]>0)
+                op = op + (char) (i+97);
+        }
+        
+        return op;  
+    }
+    
+    public static void main(String[] args) {
+        
+        //First repeating character in string
+        String str = "akarsh";
+        System.out.println(firstNonRepeating(str));
+        
+        //Remove duplicates from sorted string
+        String s = "aaahhhlll";
+        System.out.println(removeDuplicatesSorted(s));
+
+    }
+}
