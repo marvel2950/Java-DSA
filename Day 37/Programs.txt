@@ -1,0 +1,94 @@
+public class Main {
+    
+    static void subStrings(String str){
+        int n = str.length();
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n+1;j++){
+                for(int k=i;k<j;k++){
+                    System.out.print(str.charAt(k));
+                }
+                System.out.println();
+            }
+        }
+    }
+    
+    static int subStringsWithNoVowels(String str){
+        int n = str.length();
+        int count = 0;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n+1;j++){
+                boolean flag = true;
+                for(int k=i;k<j;k++){
+                    char ch = str.charAt(k);
+                    ch = Character.toLowerCase(ch);
+                    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                        flag = false;
+                        
+                    }
+                }
+                if(flag)
+                    count++;
+            }
+        }
+        return count;
+    }
+    
+    static void countAndMaxLengthSubstring(String str){
+        int n = str.length();
+        int count = 0;
+        int len = 0;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n+1;j++){
+                char first = '-';
+                char last = '-';
+                for(int k=i;k<j;k++){
+                    char ch = str.charAt(k);
+                    if(first=='-')
+                        first = ch;
+                    last = ch;
+                    
+                }
+                if(first=='a' && last=='a'){
+                    count++;
+                    int lenSub = j-i;
+                    len = Math.max(len,lenSub);
+                }
+            }
+        }
+        System.out.println(count+" "+len);
+    }
+    
+    static int IntegerSubstringsSum(String str){
+        int n = str.length();
+        int sum = 0;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n+1;j++){
+                String num = "";
+                for(int k=i;k<j;k++){
+                    num = num + str.charAt(k);
+                }
+                sum = sum + Integer.parseInt(num);
+                }
+        }
+        return sum;
+    }
+    
+    
+    public static void main(String[] args) {
+        
+        //Print all substrings
+        String str = "abc";
+        subStrings(str);
+        
+        //Count substrings with no vowels
+        System.out.println(subStringsWithNoVowels(str));
+        
+        //Count substrings that start with ‘A’ and end with ‘A’. Also find the length of the longest such substring.
+        countAndMaxLengthSubstring(str);
+        
+        //Calculate the sum of all substrings. Given a number as a string , calculate the sum of all numbers formed as substrings of a given string.
+        String s = "123";
+        System.out.println(IntegerSubstringsSum(s));
+
+    }
+}
