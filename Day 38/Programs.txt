@@ -1,0 +1,61 @@
+// "static void main" must be defied in a public class.
+import java.util.*;
+public class Main {
+    
+    static void minMaxDiffVowels(String str){
+        int n = str.length();
+        str = str.toLowerCase();
+        int[] ind = new int[n];
+        int j = 0;
+        
+        for(int i=0;i<n;i++){
+            if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' ||                    str.charAt(i)=='o' || str.charAt(i)=='u'){
+                ind[j] = i;
+                j++;   
+            }
+        }
+        
+        ind = Arrays.copyOf(ind,j);
+        System.out.println("Max : "+(ind[ind.length-1]-ind[0]));
+        
+        int min = n+1;
+        for(int i=0;i<ind.length-1;i++)
+            min = Math.min(min,ind[i+1]-ind[i]);
+        
+        System.out.println("Min : "+min);
+
+    }
+    
+     static boolean isBalanced(String str){
+         int n = str.length();
+         int mid = n/2;
+
+         int sumLeft = 0;
+         int sumRight = 0;
+         
+         for(int i=0;i<mid;i++)
+             sumLeft = sumLeft + str.charAt(i);
+         
+         if(n%2==0){
+             for(int i=mid;i<n;i++)
+                 sumRight = sumRight + str.charAt(i);
+         }
+         else{
+             for(int i=mid+1;i<n;i++)
+                 sumRight = sumRight + str.charAt(i);
+         }
+         
+         return sumLeft == sumRight;
+    }
+    
+    public static void main(String[] args) {
+        
+        String str = "akarshaishwarya";
+        minMaxDiffVowels(str);
+        
+        String s = "12321";
+        System.out.println(isBalanced(s));
+        
+        
+    }
+}
