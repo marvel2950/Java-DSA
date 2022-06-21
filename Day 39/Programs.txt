@@ -1,0 +1,59 @@
+public class Main {
+    
+    static boolean isPrime(int num){
+        
+        if(num==0||num==1){
+            return false;
+        }else{
+            for (int i = 2; i < Math.sqrt(num)+1; i++) {
+                if(num%i==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+
+    }
+
+    static void printFactors(int n){
+        
+        for(int i=1;i<=Math.sqrt(n);i++){
+            if(n%i==0){
+                if(n/i!=i)
+                    System.out.print(i+" ");
+                System.out.print((n/i)+" ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        //Ceil
+        System.out.println(Math.ceil(4.58));
+        System.out.println(Math.ceil(4.01));
+        
+        //Floor
+        System.out.println(Math.floor(4.58));
+        System.out.println(Math.floor(4.01));
+        
+        //Sin/cos/tan
+        System.out.println(Math.sin(Math.toRadians(30)));
+        System.out.println(Math.asin(30));
+        
+        //Log
+        System.out.println(Math.log(2.31));
+        
+        //Prime number
+        int n = 7;
+        System.out.println(isPrime(n));
+        
+        int m = 100;
+        printFactors(m);
+       
+
+
+        
+
+
+    }
+}
