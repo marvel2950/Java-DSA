@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    
+    static double power(int x, int n){
+        double ans = 1;
+        for(int i=1;i<=Math.abs(n);i++)
+            ans *= x;
+        if(n<0)
+            return 1/ans;
+        return ans;
+    
+    }
+    
+    static int binaryExp(int x, int n){
+        int ans = 1;
+        while(n>0){
+            if(n%2==1)
+                ans = ans*x;
+            n = n/2;
+            x = x*x;
+        
+        }
+        return ans;
+    
+    }
+    
+    
+    public static void main(String[] args) {
+        
+        int a = 2;
+        int b = 4;
+        System.out.println(power(a,b));
+        
+        System.out.println(binaryExp(a,b));
+
+        
+    }
+}
