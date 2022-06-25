@@ -1,0 +1,91 @@
+public class Main {
+    
+    static int binarySearchAsc(int[] arr, int ele, int start, int end ) {
+        int ind = -1;
+        while(start<=end){
+            int mid = (start+end)/2;
+            if(arr[mid]==ele){
+                ind = mid;
+                break;
+            }
+            else if(ele<arr[mid])
+                end = mid-1;
+            else
+                start = mid+1;
+        }
+        return ind;
+    }
+    
+    static int binarySearchDesc(int[] arr, int ele, int start, int end ) {
+        int ind = -1;
+        while(start<=end){
+            int mid = (start+end)/2;
+            if(arr[mid]==ele){
+                ind = mid;
+                break;
+            }
+            else if(ele>arr[mid])
+                end = mid-1;
+            else
+                start = mid+1;
+        }
+        return ind;
+    }
+    
+    static int binarySearch(int[] arr, int ele, int start, int end){
+        int n = arr.length;
+        if(arr[0]<arr[n-1])
+            return binarySearchAsc(arr,ele,start,end);
+        else
+            return binarySearchDesc(arr,ele,start,end);
+    }
+    
+    static int firstOcc(int[] arr, int ele, int start, int end ) {
+        int ind = -1;
+        while(start<=end){
+            int mid = (start+end)/2;
+            if(arr[mid]==ele){
+                ind = mid;
+                end = mid-1;
+            }
+            else if(ele<arr[mid])
+                end = mid-1;
+            else
+                start = mid+1;
+        }
+        return ind;
+    }
+    
+    static int lastOcc(int[] arr, int ele, int start, int end ) {
+        int ind = -1;
+        while(start<=end){
+            int mid = (start+end)/2;
+            if(arr[mid]==ele){
+                ind = mid;
+                start = mid+1;
+            }
+            else if(ele<arr[mid])
+                end = mid-1;
+            else
+                start = mid+1;
+        }
+        return ind;
+    }
+    
+    public static void main(String[] args) {
+        
+        //Binary Search
+        int[] arr = {1,2,5,6,9,14};
+        int start = 0;
+        int end  = arr.length - 1;
+        int ele = 2;
+        int index = binarySearch(arr,ele,start,end);
+        System.out.println(index);
+        
+        //First and last occurence of an element
+        int[] a = {1,1,2,2,3,3};
+        System.out.println(firstOcc(a,ele,start,end));
+        System.out.println(lastOcc(a,ele,start,end));
+        
+    }
+}
