@@ -1,0 +1,45 @@
+class Human {
+    String colr;
+    int age;
+    
+    // Human(){
+    //     System.out.println("Constructor called");
+    // }
+    
+    // Human(String colr, int age){
+    //     this.colr = colr;
+    //     this.age = age;
+    // }
+    
+    void walk(){
+        System.out.println("Walk....");
+    }
+    
+}
+
+public class Main {
+    
+    static int add(int a, int b){
+        a = a+7;
+        int c = a+b;
+        return c;
+    }
+    
+    public static void main(String[] args) {
+        //Instantiating a class
+        // Human akarsh = new Human();
+        // akarsh.colr = "Brown";
+        // akarsh.walk();
+        // System.out.println(akarsh.colr);
+        
+        // Human aishwarya = new Human("White", 23);
+        // aishwarya.walk();
+        // System.out.println(aishwarya.colr);
+        
+        int a = 5;
+        int b = 3;
+        add(a,b);
+        System.out.println(a);
+        
+    }
+}
