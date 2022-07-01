@@ -1,0 +1,70 @@
+class Car{
+    String name;
+    String color;
+    int model;
+    float price;
+    
+    Car(String name, String color, int model, float price){
+        this.name = name;
+        this.color = color;
+        this.model = model;
+        this.price = price;
+    }
+    
+    Car(String name, String color, int model){
+        this.name = name;
+        this.color = color;
+        this.model = model;
+    }
+    
+    Car(String name, String color, String model){
+        this.name = name;
+        this.color = color;
+        // this.model = model;
+    }
+
+    
+    Car(){
+        System.out.println("New car planned...");
+    }
+    
+    void printModel(){
+        System.out.println(this.model);
+    }
+
+}
+
+class B{
+    void a(){
+        System.out.println("One");
+    }
+    
+    int a(String c){
+        System.out.println("Three");
+        return 0;
+    }
+    
+    void a(int c){
+        System.out.println("Two "+c);
+    }
+    
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car("Alto", "White", 800, 45000.0f);
+        Car c1 = new Car("Alto", "White", 900);
+        Car c2 = new Car("Alto", "White", "XT");
+
+        c.printModel();
+        c1.printModel();
+        c2.printModel();
+        
+        B b = new B();
+        b.a();
+        b.a("Akarsh");
+        b.a(6);
+
+
+    }
+}
