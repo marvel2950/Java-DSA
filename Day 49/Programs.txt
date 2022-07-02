@@ -1,0 +1,59 @@
+// class GrandParentClass{
+//     int z = 10;
+// }
+
+// class ParentClass extends GrandParentClass{
+//     int y = 11;
+// }
+
+// class ChildClass1 extends ParentClass{
+//     int x = 12;
+// }
+// class ChildClass2 extends ParentClass{
+//     int x = 12;
+// }
+
+class A{
+    int x = 5;
+    A(){
+        System.out.println("A");
+    }
+    
+    A(int a){
+        System.out.println("A int "+a);
+    }
+    
+    void printName(){
+        System.out.println("Aishwarya");
+    }
+}
+
+class B extends A{
+    int x = 9;
+    B(){
+        //super(7);
+        System.out.println("B"+super.x);
+    }
+    
+    void printName(){
+        System.out.println("Aastha");
+    }
+    
+    void printNameAndCaste(){
+        super.printName();
+        System.out.println("Sharma");
+
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // ChildClass1 childClass = new ChildClass1();
+        // System.out.println(childClass.z);
+        
+        B b = new B();
+        b.printNameAndCaste();
+    }
+}
