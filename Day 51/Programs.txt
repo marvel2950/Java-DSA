@@ -1,0 +1,77 @@
+// abstract class Animal{
+    
+//     protected int id;
+    
+//     //Constructor
+//     // Animal(int id){
+//     //     this.id = id;
+//     // }
+    
+//     public abstract void run();
+//     public abstract void race();
+    
+//     protected void respectFemales(){
+//         System.out.println("Respect++");
+//     }
+// }
+
+// abstract class Rabbit extends Animal{
+//     //@Override
+//     public void run(){
+//         System.out.println("Faster");
+//     }
+//     // @Override
+//     // public void race(){
+//     //     System.out.println("Looser");
+//     // }
+// }
+
+// class RabbitBaby extends Rabbit{
+//     @Override
+//     public void race(){
+//         System.out.println("Looser");
+//         System.out.println("But");
+        
+//         run();
+//     }
+// }
+
+interface Animal{
+
+    public abstract void run();
+    public abstract void race();
+    
+    // protected void respectFemales(){
+    //     System.out.println("Respect++");
+    // }
+}
+
+class Rabbit implements Animal{
+    //@Override
+    public void run(){
+        System.out.println("Faster");
+    }
+    @Override
+    public void race(){
+        System.out.println("Looser");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        //Abstract class
+        //RabbitBaby rabbit = new RabbitBaby();
+        //rabbit.race();
+        //rabbit.run();
+        //rabbit.respectFemales();
+        
+        //Interface
+        Rabbit rabbit = new Rabbit();
+        rabbit.race();
+        //rabbit.run();
+        
+        
+        
+    }
+}
