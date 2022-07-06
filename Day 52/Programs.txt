@@ -1,0 +1,27 @@
+class A{
+    static int x;
+    
+    //static method
+}
+
+public class Main {
+    
+    void printName(){
+        System.out.println("Akarsh");
+    }
+    
+    public static void main(String[] args) {
+        A a1 = new A();
+        a1.x = 5;
+        System.out.println(a1.x);
+        
+        A a2 = new A();
+        System.out.println(A.x);
+        
+        a1.x = 7;
+        System.out.println(a2.x);
+        
+        //printName();
+        
+    }
+}
