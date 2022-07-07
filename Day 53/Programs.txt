@@ -1,0 +1,84 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        ArrayList arr1 = new ArrayList<>();
+        
+        ArrayList arr = new ArrayList<>(){
+            {
+                add("Akarsh");
+                add("Aishwarya");
+                add("Aastha");
+            }
+        };
+        
+        // for(int i=0;i<2;i++){
+        //     if(i==0)
+        //         arr.add(sc.nextInt());
+        //     else
+        //         arr.add(sc.nextFloat())
+        // }
+        
+        arr.add("Akarsh");
+        arr.add("5.7");
+        arr.add(1);
+        
+        arr.add(1,"Abhay");
+        
+        arr.remove(1);
+        arr.remove("Akarsh");
+        
+        System.out.println(arr.size());
+        
+        for(Object obj: arr)
+            System.out.println(obj);
+        
+        System.out.println(arr);
+
+        
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        
+        array.remove(2);
+        System.out.println(array);
+
+
+        
+        for(int i=0;i<arr.size();i++)
+            System.out.println(arr.get(i));
+        
+        //Linear Search
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        
+        for(int i=0;i<n;i++){
+            int x = sc.nextInt();
+            list.add(x);
+        }
+        
+        // list.add(5);
+        // list.add(7);
+        // list.add(10);
+        // list.add(8);
+        // list.add(4);
+        int ele = 4;
+        
+        System.out.println("***********");
+        
+        for(int i=0;i<list.size();i++){
+            if(list.get(i) == ele){
+                System.out.println(i);
+                break;
+            }
+        }
+
+
+
+        
+    }
+}
