@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> st = new Stack<Integer>();
+        
+        //Add elements
+        st.push(23);
+        st.push(45);
+        st.push(87);
+        
+        System.out.println(st);
+        
+        //Remove elements
+        st.pop();
+        
+        System.out.println(st);
+        
+        //Top element
+        System.out.println(st.peek());
+        
+        //Size of stack
+        System.out.println(st.size());
+        
+        //Check empty
+        System.out.println(st.empty());
+        
+        
+        st.push(87);
+        //Search -> Index 
+        System.out.println(st.search(450));
+
+        
+
+
+    }
+}
