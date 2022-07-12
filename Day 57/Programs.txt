@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        Queue<String> q = new LinkedList<String>();
+        
+        q.add("Akarsh");
+        q.add("Aishwarya");
+        q.add("Aastha");
+        
+        //q.remove();
+        System.out.println(q.peek()+" "+q.size());
+        System.out.println(q);
+        
+    }
+}
