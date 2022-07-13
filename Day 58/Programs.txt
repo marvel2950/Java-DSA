@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        //Priority Queue
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        
+        //Add elements
+        pq.add(8);
+        pq.add(1);
+        pq.add(4);
+        
+        System.out.println(pq);
+        
+        System.out.println("-------------");
+        
+        //Get minimum and remove all
+        System.out.println(pq.poll());
+        System.out.println(pq);
+        
+        System.out.println("-------------");
+
+        //Peek element
+        System.out.println(pq.peek());
+        System.out.println(pq);
+        
+        pq.add(3);
+        pq.add(10);
+        pq.add(5);
+        System.out.println(pq);
+     
+        System.out.println("-------------");
+        
+        //Remove
+        System.out.println(pq.remove());
+        System.out.println(pq);
+        
+        System.out.println(pq.remove(8));
+        System.out.println(pq);
+        
+        //String priority queue
+        PriorityQueue<String> prq = new PriorityQueue<String>();
+        
+        prq.add("akarsh");
+        prq.add("Aishwarya");
+        prq.add("Aastha");
+        prq.add("Aastha");
+        
+        System.out.println(prq);
+
+        
+    }
+}
