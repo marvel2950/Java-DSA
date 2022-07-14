@@ -1,0 +1,63 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> h = new HashMap<Integer,String>();
+        
+        //Add elements
+        h.put(22,"Akarsh");
+        h.put(17,"Aishwarya");
+        h.put(1,"Aastha");
+        //h.put(90,null);
+        
+        System.out.println(h.size());
+        System.out.println(h.get(17));
+        System.out.println(h.containsKey(17));
+        
+        System.out.println("------------");
+        
+        //change the value
+        h.put(1,"Abhay");
+        
+        //Remove using key
+        System.out.println(h.remove(17));
+        
+        System.out.println("------------");
+        
+        //Print hashmap
+        for(Map.Entry<Integer,String> e : h.entrySet())
+            System.out.println(e.getKey()+" -> "+e.getValue());
+    
+        System.out.println("------------");
+
+        //Count of elements
+        int[] arr = {5,6,6,6,6,7,5,5,7};
+        
+        HashMap<Integer,Integer> m = new HashMap<Integer,Integer>();
+        //key,value -> element, frequency
+        for(int i=0;i<arr.length;i++){
+            if(m.containsKey(arr[i])){
+                int freq = m.get(arr[i]);
+                freq++;
+                m.put(arr[i],freq);
+            }
+            else
+                m.put(arr[i],1);
+        }
+        for(Map.Entry<Integer,Integer> mm : m.entrySet()){
+            System.out.println(mm.getKey()+" -> "+mm.getValue());              }
+        
+        System.out.println("------------");
+        
+        //Print element with max frequency
+        int maxFreq = 0;
+        int maxEle = -1;
+        for(Map.Entry<Integer,Integer> mm : m.entrySet()){
+            if(mm.getValue()>maxFreq){
+                maxFreq = mm.getValue();
+                maxEle = mm.getKey();
+            }
+        }
+        System.out.println(maxEle);
+        
+    }
+}
