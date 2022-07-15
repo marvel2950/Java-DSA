@@ -1,0 +1,48 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //Is duplicate elements
+        int[] arr = {5,6,6,6,6,7,5,5,7};
+        
+        HashMap<Integer,Integer> m = new HashMap<Integer,Integer>();
+        //key,value -> element, frequency
+        boolean flag = true;
+        for(int i=0;i<arr.length;i++){
+            if(m.containsKey(arr[i])){
+                System.out.println(true);
+                flag = false;
+                break;
+            }
+            else
+                m.put(arr[i],1);
+        }
+        if(flag)
+            System.out.println(false);
+
+        System.out.println("------------");  
+        
+        //Two sum problem
+        
+        int[] a = {1,5,7,2,3,8,4};
+        int ele = 9;
+        
+        HashMap<Integer,Integer> h = new HashMap<Integer,Integer>();
+        //key,value -> element, frequency
+        boolean f = true;
+        for(int i=0;i<a.length;i++){
+            if(h.containsKey(ele-a[i])){
+                System.out.println(true);
+                f = false;
+                break;
+            }
+            else
+                h.put(a[i],1);
+        }
+        if(f)
+            System.out.println(false);
+
+        System.out.println("------------");  
+        
+        
+    }
+}
