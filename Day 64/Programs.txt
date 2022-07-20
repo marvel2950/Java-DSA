@@ -1,0 +1,41 @@
+public class Main {
+    
+    static int fact(int n){
+        if(n==1)
+            return 1;
+        return n*fact(n-1);
+    }
+    
+    static void printDec(int n){
+        if(n==1){
+            System.out.print(1+" ");
+            return;
+        }
+        System.out.print(n+" ");
+        printDec(n-1);
+    }
+    
+    static void printInc(int n){
+        if(n==1){
+            System.out.print(1+" ");
+            return;
+        }
+        printInc(n-1);
+        System.out.print(n+" ");
+    }
+    
+    public static void main(String[] args) {
+        
+        int n = 5;
+        System.out.println(fact(n));
+        
+        System.out.println("------------");
+        
+        printDec(n);
+
+        System.out.println("\n------------");
+        
+        printInc(n);
+                
+    }
+}
