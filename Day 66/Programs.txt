@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class Main {
+    
+    static int arraySum(int[] arr, int n){
+        if(n==0)
+            return 0;
+        return arr[n-1]+arraySum(arr,n-1);
+    }
+    
+    static int maxEle(int[] arr,int n, int max){
+        if(n==1){
+            if(max<arr[0])
+                max = arr[0];
+            return max;
+        }
+        if(arr[n-1]>max)
+            max = arr[n-1];
+        return maxEle(arr,n-1,max);
+    }
+    
+    static boolean sortedOrNot(int[] arr, int n){
+        if(n==0 || n==1)
+            return true;
+        return arr[n-2]<arr[n-1] && sortedOrNot(arr,n-1);
+    }
+    
+    public static void main(String[] args) {
+        
+        //Sum of an array
+        int[] arr = {4,2,3,7};
+        System.out.println(arraySum(arr,arr.length));
+        
+        System.out.println("-----------------");
+        
+        //Maximum element in an array
+        int[] a = {-1,-9,-7};
+        int max = Integer.MIN_VALUE;
+        System.out.println(maxEle(a,a.length,max));
+        
+        System.out.println("-----------------");
+        
+        //Check if array is sorted
+        int[] brr = {1,2,5,8};
+        System.out.println(sortedOrNot(brr,arr.length));
+        
+    }
+}
