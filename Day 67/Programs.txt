@@ -1,0 +1,48 @@
+public class Main {
+    
+    static int binarySearch(int[] arr, int ele, int start, int end ) {
+        if(end>=start){
+            int mid = (start+end)/2;
+            if(arr[mid]==ele)
+                return mid;
+            else if(ele<arr[mid])
+                return binarySearch(arr,ele,start,mid-1);
+            else
+                return binarySearch(arr,ele,mid+1,end);
+        }
+        else
+            return -1;
+    }
+    
+    static void subset(String ip, String op){
+        if(ip.length()==0){
+            System.out.println("Substring "+op);
+            return;
+        }
+        subset(ip.substring(1),op+ip.charAt(0));
+        subset(ip.substring(1),op);
+    }
+    
+    public static void main(String[] args) {
+        
+        //Binary Search
+        int[] arr = {1,5,8,11};
+        int ele = 8;
+        System.out.println(binarySearch(arr,ele,0,arr.length-1));
+        
+        System.out.println("--------------");
+        
+        //substring function (start,end-1)
+        String str = "akarsh";
+        System.out.println(str.substring(1));
+        System.out.println(str.substring(1,4));
+        
+        System.out.println("--------------");
+
+        String ip ="abc";
+        String op = "";
+        subset(ip,op);
+       
+        
+    }
+}
