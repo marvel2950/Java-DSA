@@ -1,0 +1,30 @@
+public class Main {
+    
+    static int reverseNumber(int num, int sum){
+        if(num<10){
+            sum = sum*10 + num;
+            return sum;
+        }
+        sum = sum*10 + num%10;
+        return reverseNumber(num/10,sum);
+    }
+    
+    static boolean isPal(int n){
+        return (reverseNumber(n,0)==n);
+    }
+    
+    public static void main(String[] args) {
+        
+        //Reverse a number using recursion
+        int num = 3579;
+        int rev_num = reverseNumber(num,0);
+        System.out.println(rev_num);
+        
+        System.out.println("------------");
+        
+        //Check if number is palindrome
+        int n = 78287;
+        boolean flag = isPal(n);
+        System.out.println(flag);
+    }
+}
