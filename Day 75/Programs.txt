@@ -1,0 +1,44 @@
+public class Main {
+    
+    static void reverse(ArrayList<Integer> arr){
+        
+        if(arr.size()==1)
+            return;
+        
+        int alpha = arr.remove(0);
+        reverse(arr); //arr.substring(1) (if not popping)
+        arr.add(alpha);
+        
+    }
+    
+    static boolean isPalStr(String s, int i, int j){
+        
+        if(i>=j)
+            return true;
+        
+        return s.charAt(i)==s.charAt(j) && isPalStr(s,i+1,j-1); 
+        
+    }
+    
+    public static void main(String[] args) {
+        
+        //Reverse an ArrayList (using recursion)
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        arr.add(3);
+        arr.add(5);
+        arr.add(7);
+        arr.add(9);
+        
+        reverse(arr);
+        System.out.println(arr);
+        
+        System.out.println("-------------");
+        
+        //Check if a string is palindrome or not ? (using recursion)
+        String s = "malayalam";
+        int i = 0;
+        int j = s.length() - 1;
+        System.out.println(isPalStr(s,i,j));
+        
+    }
+}
