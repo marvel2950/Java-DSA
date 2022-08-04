@@ -1,0 +1,66 @@
+import java.util.*;
+
+class MyStack{
+    
+    ArrayList<Integer> st;
+    int maxSize;
+    
+    MyStack(int maxSize){
+        this.maxSize = maxSize;
+        st = new ArrayList<Integer>();
+    }
+    
+    void push(int ele){
+        if(st.size() < maxSize)
+            st.add(ele);
+    }
+    
+    int pop(){
+        int top = st.size()-1;
+        if(top != -1)
+            return st.remove(top);
+        return -1;
+    }
+    
+    int peek(){
+        int top = st.size()-1;
+        if(top != -1)
+            return st.get(top);
+        return -1;
+    }
+    
+    void print(){
+        int top = st.size()-1;
+        for(int i=top;i>=0;i--)
+            System.out.println("| "+st.get(i)+" |");
+        System.out.println( "|____|\n");
+    }
+        
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        
+        //Stack
+        
+        MyStack s = new MyStack(10);
+        s.push(99);
+        s.push(23);
+        s.push(89);
+        s.push(66);
+        
+        s.print();
+        
+        // s.pop();
+        // s.pop();
+        // s.pop();
+        // s.pop();
+        s.pop();
+
+        s.print();
+        
+        //Identity of an object
+        System.out.println(s);
+    }
+}
