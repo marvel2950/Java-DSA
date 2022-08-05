@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        //Mock Interview Problem
+        // Refer same day notes for problem stat
+        int[] arr = {1,2,3,4,5,6,7,8,9,10};
+        int row = 3; //0 based indexing
+        int index = -1;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<i+1;j++)
+                index++;
+        }
+        //System.out.println(index);
+        // int sum = 0;
+        // for(int i=index+1;i<=index+row+1;i++)
+        //     sum = sum+arr[i];
+        // System.out.println(sum);
+        
+        int[] rowArr = new int[row+1];
+        for(int i=index+1;i<index+row+2;i++){
+            int ind = i-(index+1);
+            //System.out.println(ind);
+            rowArr[ind] = arr[i];
+        }
+        
+        //Printing rowArr
+        for(int i=0;i<row+1;i++)
+            System.out.print(rowArr[i]+" ");
+        
+    }
+}
