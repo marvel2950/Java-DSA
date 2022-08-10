@@ -1,0 +1,66 @@
+class Node{
+    int val;
+    Node next;
+   
+    Node(int data){
+        this.val = data;
+        this.next = null;
+    }
+}
+ 
+class LinkedListImpl{
+    Node head;
+   
+    LinkedListImpl(){
+        this.head = null;
+    }
+  
+    void insertAtEnd(int data){
+        Node cur = this.head;
+        Node newNode = new Node(data);
+        if(cur==null)
+            this.head = newNode;
+        else{
+            while(cur.next != null)
+                cur = cur.next;
+            cur.next = newNode;
+        }
+    } 
+}
+
+
+ 
+public class Main{
+    
+    static void print(Node head){
+        Node cur = head;
+        while(cur!=null){
+            System.out.print(cur.val+" ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
+    
+    static Node reverse(Node head){
+        if(head == null || head.next == null)
+            return head;
+        Node rest = reverse(head.next);
+        head.next.next = head;
+        head.next = null;
+        return rest;
+    }
+    public static void main(String[] args){
+        LinkedListImpl l = new LinkedListImpl();
+        int[] nodes_val = {5,4,1,0,7};
+        for(int val : nodes_val){
+            l.insertAtEnd(val);
+        }
+        print(l.head); 
+        
+        Node newHead = reverse(l.head);
+            
+        print(newHead);
+
+
+    }
+}
