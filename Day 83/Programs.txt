@@ -1,0 +1,26 @@
+public class Main {
+    
+    static void solve(int[] arr, int x){
+        arr[0] = 35;
+        x = 98;
+    }
+    
+    public static void main(String ajr[]) {
+        int[] arr = {1};
+        //int x = arr[-1];
+        
+        String[] ar = new String[3];
+        ar[0] = "Akarsh";
+        ar[1] = "Akarsh";
+        ar[2] = "Akarshe";
+        System.out.println(System.identityHashCode(ar[0]) );
+        System.out.println(System.identityHashCode(ar[1]) );
+        System.out.println(System.identityHashCode(ar[2]) );
+        
+        int x = 5;
+        solve(arr,x);
+        
+        System.out.println(arr[0]+" "+x);
+        
+    }
+}
