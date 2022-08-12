@@ -1,0 +1,88 @@
+import java.util.*;
+
+class MyStack{
+    
+    ArrayList<Integer> st;
+    int maxSize;
+    
+    MyStack(int maxSize){
+        this.maxSize = maxSize;
+        st = new ArrayList<Integer>();
+    }
+    
+    void push(int ele){
+        if(st.size() < maxSize)
+            st.add(ele);
+    }
+    
+    int pop(){
+        int top = st.size()-1;
+        if(top != -1)
+            return st.remove(top);
+        return -1;
+    }
+    
+    int peek(){
+        int top = st.size()-1;
+        if(top != -1)
+            return st.get(top);
+        return -1;
+    }
+    
+    int size(){
+        return st.size();
+    }
+    
+    void print(){
+        int top = st.size()-1;
+        for(int i=top;i>=0;i--)
+            System.out.println("| "+st.get(i)+" |");
+        System.out.println( "|____|\n");
+    }
+        
+}
+
+class MyQueue{
+    
+    MyStack s1;
+    MyStack s2;
+    
+    MyQueue(){
+        this.s1 = new MyStack(100);
+        this.s2 = new MyStack(100);
+    }
+    
+    int deque(){
+        if(s1.size()==0)
+            return -1;
+        else
+            return s1.pop();
+    }
+    
+    void enque(int ele){
+        while(s1.size()>0){
+            int alpha = s1.pop();
+            s2.push(alpha);
+        }
+        s1.push(ele);
+        while(s2.size()>0){
+            int alpha = s2.pop();
+            s1.push(alpha);
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        MyQueue q = new MyQueue();
+        q.enque(5);
+        q.enque(6);
+        q.enque(7);
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+
+
+
+    }
+}
