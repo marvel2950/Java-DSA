@@ -72,7 +72,6 @@ class MyQueue{
     }
 }
 
-
 public class Main {
     public static void main(String[] args) {
         MyQueue q = new MyQueue();
@@ -81,8 +80,5 @@ public class Main {
         q.enque(7);
         System.out.println(q.deque());
         System.out.println(q.deque());
-
-
-
     }
 }
